@@ -1,0 +1,8 @@
+led_display.c:22:6:display7SEG	16	static
+led_display.c:71:6:increases_time	8	static
+led_display.c:99:6:auto_increases_time	8	static
+led_display.c:109:6:time_clock	4	static
+led_display.c:131:6:stopwatch	4	static
+led_display.c:153:6:blinking_led	8	static
+led_display.c:193:6:select_clock	8	static
+led_display.c:226:6:display_clock	8	static

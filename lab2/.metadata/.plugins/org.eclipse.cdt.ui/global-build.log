@@ -1,0 +1,34 @@
+22:08:58 **** Incremental Build of configuration Debug for project exercise2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:230:11: warning: unused variable 'matrix_buffer' [-Wunused-variable]
+  230 |   uint8_t matrix_buffer[8] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+      |           ^~~~~~~~~~~~~
+../Core/Src/main.c:229:7: warning: unused variable 'index_led_matrix' [-Wunused-variable]
+  229 |   int index_led_matrix = 0;
+      |       ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: warning: unused variable 'MAX_LED_MATRIX' [-Wunused-variable]
+  228 |   const int MAX_LED_MATRIX = 8;
+      |             ^~~~~~~~~~~~~~
+At top level:
+../Core/Src/main.c:232:8: warning: 'updateLEDMatrix' defined but not used [-Wunused-function]
+  232 |   void updateLEDMatrix(int index){
+      |        ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "exercise2.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\my file\VXL\lab\lab2\exercise2\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="exercise2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: exercise2.elf
+ 
+arm-none-eabi-size   exercise2.elf 
+arm-none-eabi-objdump -h -S  exercise2.elf  > "exercise2.list"
+arm-none-eabi-objcopy  -O ihex  exercise2.elf  "exercise2.hex"
+arm-none-eabi-objcopy  -O binary  exercise2.elf  "exercise2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   8004	     52	   1660	   9716	   25f4	exercise2.elf
+Finished building: default.size.stdout
+ 
+Finished building: exercise2.hex
+Finished building: exercise2.bin
+ 
+ 
+Finished building: exercise2.list
+ 

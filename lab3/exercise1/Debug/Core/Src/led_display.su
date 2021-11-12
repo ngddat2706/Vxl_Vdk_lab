@@ -1,0 +1,8 @@
+led_display.c:14:6:clear_all	8	static
+led_display.c:20:6:display_led	16	static
+led_display.c:53:6:increases_led	8	static
+led_display.c:60:6:decreases_led	8	static
+led_display.c:67:6:auto_increases_led	8	static
+led_display.c:74:6:auto_increases_led_3	8	static
+led_display.c:82:6:auto_decreases_led	8	static
+led_display.c:90:6:auto_decreases_led_3	8	static

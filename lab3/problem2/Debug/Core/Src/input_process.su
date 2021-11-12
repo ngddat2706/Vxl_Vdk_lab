@@ -1,0 +1,4 @@
+input_process.c:13:6:button_mode	8	static
+input_process.c:26:5:get_mode	4	static
+input_process.c:30:6:set_mode	16	static
+input_process.c:35:6:fsm_for_input_processing	8	static

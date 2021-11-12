@@ -1,0 +1,5 @@
+input_reading.c:20:15:get_status_pin	16	static
+input_reading.c:31:6:button_reading	24	static
+input_reading.c:58:15:get_button_value	16	static
+input_reading.c:63:15:get_flag_for_button_press_1s	16	static
+input_reading.c:67:15:get_flag_for_button_press_3s	16	static

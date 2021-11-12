@@ -1,0 +1,10 @@
+17:11:22 **** Build of configuration Debug for project exercise5 ****
+make -j8 all 
+arm-none-eabi-size   exercise5.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4716	     20	   1572	   6308	   18a4	exercise5.elf
+Finished building: default.size.stdout
+ 
+
+17:11:23 Build Finished. 0 errors, 0 warnings. (took 528ms)
+

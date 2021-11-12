@@ -1,0 +1,27 @@
+17:20:01 **** Incremental Build of configuration Debug for project G0_LED ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:111:3: warning: "/*" within comment [-Wcomment]
+  111 |   /* USER CODE END 3 */
+      |    
+arm-none-eabi-gcc -o "G0_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\my file\VXL\lab\workspace\G0_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="G0_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: G0_LED.elf
+ 
+arm-none-eabi-size   G0_LED.elf 
+arm-none-eabi-objdump -h -S  G0_LED.elf  > "G0_LED.list"
+arm-none-eabi-objcopy  -O ihex  G0_LED.elf  "G0_LED.hex"
+arm-none-eabi-objcopy  -O binary  G0_LED.elf  "G0_LED.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7284	     24	   1640	   8948	   22f4	G0_LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: G0_LED.hex
+Finished building: G0_LED.bin
+ 
+ 
+Finished building: G0_LED.list
+ 
+
+17:20:03 Build Finished. 0 errors, 1 warnings. (took 1s.202ms)
+

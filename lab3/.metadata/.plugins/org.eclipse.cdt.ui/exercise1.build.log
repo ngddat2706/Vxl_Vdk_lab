@@ -1,0 +1,81 @@
+12:38:16 **** Build of configuration Debug for project exercise1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/input_processing.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/input_processing.d" -MT"Core/Src/input_processing.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/input_processing.o"
+arm-none-eabi-gcc "../Core/Src/input_reading.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/input_reading.d" -MT"Core/Src/input_reading.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/input_reading.o"
+arm-none-eabi-gcc "../Core/Src/led_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/led_display.d" -MT"Core/Src/led_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/led_display.o"
+../Core/Src/input_reading.c: In function 'button_reading':
+../Core/Src/input_reading.c:33:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+   33 |   debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
+      |                        ^
+../Core/Src/input_reading.c:33:51: warning: array subscript has type 'char' [-Wchar-subscripts]
+   33 |   debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
+      |                                                   ^
+../Core/Src/input_reading.c:34:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+   34 |   debounceButtonBuffer1[i] = get_status_pin(i);
+      |                        ^
+../Core/Src/input_reading.c:35:27: warning: array subscript has type 'char' [-Wchar-subscripts]
+   35 |   if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i])
+      |                           ^
+../Core/Src/input_reading.c:35:55: warning: array subscript has type 'char' [-Wchar-subscripts]
+   35 |   if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i])
+      |                                                       ^
+../Core/Src/input_reading.c:36:16: warning: array subscript has type 'char' [-Wchar-subscripts]
+   36 |    buttonBuffer[i] = debounceButtonBuffer1[i];
+      |                ^
+../Core/Src/input_reading.c:36:43: warning: array subscript has type 'char' [-Wchar-subscripts]
+   36 |    buttonBuffer[i] = debounceButtonBuffer1[i];
+      |                                           ^
+../Core/Src/input_reading.c:37:18: warning: array subscript has type 'char' [-Wchar-subscripts]
+   37 |   if(buttonBuffer[i] == GPIO_PIN_SET){
+      |                  ^
+../Core/Src/input_reading.c:38:30: warning: array subscript has type 'char' [-Wchar-subscripts]
+   38 |    if(counterForButtonPress1s[i] < DURATION_FOR_AUTO_INCREASING){
+      |                              ^
+../Core/Src/input_reading.c:39:28: warning: array subscript has type 'char' [-Wchar-subscripts]
+   39 |     counterForButtonPress1s[i]++;
+      |                            ^
+../Core/Src/input_reading.c:41:35: warning: array subscript has type 'char' [-Wchar-subscripts]
+   41 |    else if(counterForButtonPress1s[i] < DURATION_FOR_AUTO){
+      |                                   ^
+../Core/Src/input_reading.c:42:28: warning: array subscript has type 'char' [-Wchar-subscripts]
+   42 |     counterForButtonPress1s[i]++;
+      |                            ^
+../Core/Src/input_reading.c:43:25: warning: array subscript has type 'char' [-Wchar-subscripts]
+   43 |     flagForButtonPress1s[i] = 1;
+      |                         ^
+../Core/Src/input_reading.c:46:25: warning: array subscript has type 'char' [-Wchar-subscripts]
+   46 |     flagForButtonPress3s[i] = 1;
+      |                         ^
+../Core/Src/input_reading.c:51:27: warning: array subscript has type 'char' [-Wchar-subscripts]
+   51 |    counterForButtonPress1s[i] = 0;
+      |                           ^
+../Core/Src/input_reading.c:52:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+   52 |    flagForButtonPress1s[i] = 0;
+      |                        ^
+../Core/Src/input_reading.c:53:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+   53 |    flagForButtonPress3s[i] = 0;
+      |                        ^
+../Core/Src/input_reading.c: In function 'get_status_pin':
+../Core/Src/input_reading.c:29:1: warning: control reaches end of non-void function [-Wreturn-type]
+   29 | }
+      | ^
+arm-none-eabi-gcc -o "exercise1.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\my file\VXL\lab\lab3\exercise1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="exercise1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: exercise1.elf
+ 
+arm-none-eabi-size   exercise1.elf 
+arm-none-eabi-objdump -h -S  exercise1.elf  > "exercise1.list"
+arm-none-eabi-objcopy  -O ihex  exercise1.elf  "exercise1.hex"
+arm-none-eabi-objcopy  -O binary  exercise1.elf  "exercise1.bin"
+   text	   data	    bss	    dec	    hex	filename
+   8228	     24	   1680	   9932	   26cc	exercise1.elf
+Finished building: default.size.stdout
+ 
+Finished building: exercise1.bin
+Finished building: exercise1.hex
+ 
+ 
+Finished building: exercise1.list
+ 
+
+12:38:24 Build Finished. 0 errors, 18 warnings. (took 8s.111ms)
+
