@@ -8,7 +8,7 @@
 #define NO_OF_BUTTONS		1
 #define DURATION_FOR_AUTO_INCREASING	254
 
-static GPIO_PinState	buttonBuffer[NO_OF_BUTTONS];
+static GPIO_PinState buttonBuffer[NO_OF_BUTTONS];
 
 static GPIO_PinState debounceButtonBuffer1[NO_OF_BUTTONS];
 static GPIO_PinState debounceButtonBuffer2[NO_OF_BUTTONS];

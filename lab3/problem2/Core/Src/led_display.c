@@ -265,7 +265,8 @@ void display_clock(void){
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 0);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, 1);
 		display7SEG(dvi * z + 10 * (z - 1));
-		}
+	}
+
 	else{
 		blinking_led();
 		t = 18;
